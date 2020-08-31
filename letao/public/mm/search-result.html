@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/mui1/css/icons-extra.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="./css/search-result.css">
+    <script src="assets/zepto/zepto.min.js"></script>
+    <script src="assets/artTemplate/template-native.js"></script>
+    <script src="assets/mui/js/mui.min.js"></script>
+    <script src="./js/public.js"></script>
+    <script src="./js/search-result.js"></script>
+
+</head>
+
+<body>
+    <header class="mui-bar mui-bar-nav my-header">
+        <h1 class="mui-title">搜索中心</h1>
+        <a class="mui-icon mui-icon-search mui-pull-right" href="search.html"></a>
+    </header>
+    <nav class="mui-bar mui-bar-tab my-footer">
+        <a class="mui-tab-item" href="index.html">
+            <span class="mui-icon mui-icon-home"></span>
+            <span class="mui-tab-label">首页</span>
+        </a>
+        <a class="mui-tab-item" href="category.html">
+            <span class="mui-icon mui-icon-bars"></span>
+            <span class="mui-tab-label">分类</span>
+        </a>
+        <a class="mui-tab-item" href="cart.html">
+            <span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span>
+            <!-- <span class="mui-icon iconfont icon-daohanggouwuche"></span> -->
+            <span class="mui-tab-label">购物车</span>
+        </a>
+        <a class="mui-tab-item" href="user.html">
+            <span class="mui-icon mui-icon-person"></span>
+            <span class="mui-tab-label">会员中心</span>
+        </a>
+    </nav>
+    <div class="mui-content" id="refreshContent">
+        <div class="result-contariner">
+            <div class="filter">
+                <span class="price mui-icon mui-icon-arrowdown">价格</span>
+                <span class="sellNumber mui-icon mui-icon-arrowdown">销量</span>
+            </div>
+            <!-- search-result专区 -->
+            <div class="product">
+                <ul class="product-item">
+                </ul>
+            </div>
+            <!-- search-result专区结束 -->
+        </div>
+    </div>
+</body>
+<script id="search-result" type="text/template">
+    <% for(var i=0;i<result.length;i++){ %>
+    <li>
+        <a href="detail.html?id=<%= result[i].id%>">
+            <img src="<%= result[i].pic[0].picAddr%>" alt="">
+            <span class="name"><%= result[i].proName%></span>
+            <p class="price">
+                <span class="sell-price" style="color:red;">￥<%= result[i].price%></span>
+                <del class="old-price">￥<%= result[i].oldPrice%></del>
+            </p>
+            <div class="button">
+                <button type="button" class="mui-btn mui-btn-primary">立即购买</button>
+            </div>
+        </a>
+    </li>
+    <% } %>
+</script>
+
+</html>

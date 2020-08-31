@@ -1,0 +1,19 @@
+.result-contariner {
+    padding: 10px;
+}
+.filter{
+    display: flex;
+    justify-content:start;
+}
+.filter span {
+    width:50%;
+    background-color: #efeff4;
+    font-size:14px;
+    height:35px;
+    line-height:35px;
+    text-align:center;
+}
+
+.product {
+    padding: 0px;
+}

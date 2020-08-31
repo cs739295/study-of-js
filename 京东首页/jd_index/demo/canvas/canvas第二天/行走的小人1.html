@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<style>
+    canvas{
+        display: block;
+        border: 1px solid #ccc;
+        margin: 100px 500px;
+    }
+</style>
+<body>
+    <canvas width="600" height="400"></canvas>
+</body>
+<script>
+    // 小人的面向对象
+    function Person(ctx){
+        this.ctx=document.querySelector("canvas").getContext("2d")||ctx;
+        // 画布的宽高
+        this.canvasWidth=this.ctx.canvas.width;
+        this.canvasHeight=this.ctx.canvas.height;
+        // 图片的地址
+        this.src="../image/03.png";
+        // 步伐大小
+        this.stepSize=10;
+        // 方向 0表示向上,1表示向左,2表示想右,3表示上,默认情况下是向上的
+        this.direction=0;
+        // X轴和Y轴走的次数
+        this.stepX=0;
+        this.stepY=0;
+    };
+    // 初始化
+    Person.prototype.init=function(){
+        var that=this;
+        this.loadImage(function(image){
+            // 图片的宽高
+            that.imageWidth=image.width;
+            that.imageHeight=image.height;
+            // 小人的宽高
+            that.personWidth=that.imageWidth/4;
+            that.personHeight=that.imageHeight/4;
+            // 图片的初始位置
+            that.x0=that.canvasWidth/2-that.personWidth/2;
+            that.y0=that.canvasHeight/2-that.personHeight/2;
+            // 绘制图片
+            that.ctx.drawImage(image, 0, 0, that.personWidth, that.personHeight,
+                that.x0, that.y0, that.personWidth, that.personHeight);
+            // 通过方向键控制小人的行走
+            // 键盘事件
+            that.index=0;
+            document.onkeydown=function(e){
+                // console.log(e.keyCode);
+                if(e.keyCode==40){
+                    that.direction=0;
+                    that.stepY++;
+                    that.index++;
+                    that.drawImage(image);
+                }
+                if(e.keyCode==37){
+                    that.direction=1;
+                    that.index++;
+                    that.stepX--;
+                    that.drawImage(image);
+                }
+                if(e.keyCode==39){
+                    that.direction=2;
+                    that.index++;
+                    that.stepX++;
+                    that.drawImage(image);
+                }
+                if(e.keyCode==38){
+                    that.direction=3;
+                    that.index++;
+                    that.stepY--;
+                    that.drawImage(image);
+                }
+            };
+        });
+    };
+    // 加载图片
+    Person.prototype.loadImage=function(callback){
+        var image=new Image();
+        image.onload=function(){
+            callback&&callback(image);
+        };
+        image.src="../image/03.png"
+
+    };
+    //绘图
+    Person.prototype.drawImage=function(image){
+        // 首先是要清理画图
+        this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
+        // 计算移动后的坐标
+        this.ctx.drawImage(image, this.index*this.personWidth,
+                                  this.direction*this.personHeight,
+                                  this.personWidth,
+                                  this.personHeight,
+                                  this.x0+this.stepX*this.stepSize,
+                                  this.y0+this.stepY*this.stepSize,
+                                  this.personWidth,
+                                  this.personHeight);
+        if(this.index>=3){
+            this.index=0;
+        }
+    };
+    var person=new Person();
+    person.init();
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<style>
+    div{
+        width: 200px;
+        height: 200px;
+        border:1px solid red;
+        border-radius:4px;
+        color:#000;
+        font-size:16px;
+        float:left;
+    }
+    .div1{
+        margin-right:40px;
+    }
+    .div2{
+        margin-right:40px;
+    }
+    p{
+        background-color: pink;
+    }
+</style>
+<body>
+    <div class="div1">
+        <p draggable="true" id="p1">有本事你把我给拖过去啊</p>
+        <p id="p2" draggable="true" id="p2">有本事你把我也给拖过去啊</p>
+
+    </div>
+    <div class="div2">
+    </div>
+    <div class="div3">
+
+    </div>
+</body>
+    <script>
+        document.ondragstart=function(e){
+            console.log(e.target.id);
+            e.dataTransfer.setData("text/html",e.target.id);
+            console.log(e.dataTransfer.getData("text/html"));
+        }
+        document.ondragover=function(e){
+            e.preventDefault();
+        }
+        document.ondrop=function(e){
+            //console.log(e.dataTransfer.getData("text/html"));
+            e.target.appendChild(document.getElementById(e.dataTransfer.getData("text/html")));
+
+        }
+    </script>
+</html>

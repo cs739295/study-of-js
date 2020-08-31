@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<style>
+    canvas{
+        margin: 20px  500px;
+        border: 1px solid #ccc;
+
+    }
+</style>
+<body>
+    <canvas width="600" height="400">    </canvas>
+</body>
+<script>
+   var myCanvas=document.querySelector("canvas");
+   var ctx=myCanvas.getContext("2d");
+   ctx.lineWidth=30;
+   for(var i=0;i<255;i++){
+    ctx.beginPath();
+    ctx.moveTo(100-1+i, 100);
+    ctx.lineTo(100+i, 100);
+    ctx.strokeStyle="rgb("+i+","+i+","+i+")";
+    ctx.stroke();
+   }
+</script>
+</html>

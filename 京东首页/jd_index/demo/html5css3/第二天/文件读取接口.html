@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" name="userFile" id="userFile" multiple><br>
+    <input type="submit" value="提交">
+    <img  src="" alt="" id="im" width="200" height="200"><br>
+</body>
+<script>
+    window.onload=function(){
+        document.querySelector("#userFile").onchange=function(){
+            var reader=new FileReader();
+            var files=document.querySelector("#userFile").files;
+                reader.readAsDataURL(files[0]);
+            reader.onload=function(){
+                document.querySelector("#im").src=reader.result;
+            };
+        };
+    };
+</script>
+</html>
+

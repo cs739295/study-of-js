@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<style>
+    /* div{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        margin: 100px auto;
+        border-radius: 20px 100px 50px;
+    } */
+    /* 当div是长方形时 */
+    div{
+        width: 200px;
+        height: 100px;
+        background-color: red;
+        margin: 100px auto;
+        /* border-radius: 100px/50px; */ /* x方向半径/y方向半径，通过这种方式来确定椭圆圆心 */
+        /* border-上下-左右-radius :x方向半径 y方向半径 ；来确定某一个具体的角*/
+        border-top-left-radius: 100px 50px;
+        /* 分别确定每个角的每个方向的半径 */
+        border-radius: 100px 80px 60px 40px/20px 40px 60px 80px;
+
+    }
+</style>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

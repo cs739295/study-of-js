@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    div{
+        width: 1000px;
+        height: 1000px;
+        margin: 100px auto;
+        /*
+        1.添加背景颜色
+        2.添加背景图片
+        3.设置背景平铺
+        4.设置容器背景行为
+        5.设置图片大小
+        6.设置左边源点
+        7.边框图片
+         */
+        /* background-color: pink;
+        background-image:url("../image/tianshi.jpg");
+        background-repeat:no-repeat; */
+        /* background-size:contain; */
+        /* 设置背景偏移，参照的原点是默认的background-origind设置的远点，默认设置的原点是盒子模型的左上角 background-origin和background-clip两者搭配使用，这两者主要是用于手机移动端，提高手机端响应范围 */
+        /* background-position: -20px 0px;   */
+       /*  box-sizing:border-box;
+        padding:50px;
+        border:10px solid #ccc;
+        background-position:-20px 0px;
+        background-origin: content-box;
+        background-clip:content-box; */
+       /*  border:10px solid #ccc;
+        box-sizing: border-box;
+        border-image-source: url("../image/tianshi.jpg") ;
+        border-image-slice: 50 fill;
+        border-image-width:10px;
+        border-image-outset:0px; *//* 不要使用这个属性，会影响网页的布局 */
+       /*  border-image-repeat:round; */
+       简写 border-image：source slice width/outset repeat;
+       border-image: url(../image/tianshi.jpg) 50 fill/10px/0px;
+
+
+
+
+
+    }
+</style>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

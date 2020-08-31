@@ -1,0 +1,39 @@
+.mui-btn-blue,
+.mui-btn-primary,
+input[type=submit] {
+    width: 80%;
+}
+
+.register-container input {
+    font-size: 15px;
+}
+
+.register-container label {
+    font-size: 15px;
+}
+
+.register-container .register a {
+    font-size: 14px;
+    color: #006699;
+    float: right;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.register-container .getCode{
+    position: absolute;
+    right:5px;
+    top: 50%;
+    transform:translateY(-50%);
+    font-size:14px;
+    color:#006699;
+
+}
+
+.mui-input-group::after {
+    background-color: transparent;
+}
+
+.mui-button-row {
+    margin-top: 15px;
+}

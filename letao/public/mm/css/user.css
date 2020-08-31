@@ -1,0 +1,7 @@
+.user-container{
+    font-size:14px;
+    color:#000;
+}
+.mui-table-view-cell::after{
+    left:0;
+}

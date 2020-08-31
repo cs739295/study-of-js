@@ -1,0 +1,108 @@
+body {
+    background-color: #fff;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    color: #000;
+}
+
+.mui-bar-tab~.mui-content {
+    background-color: #fff;
+}
+
+.mui-bar-nav {
+    background-color: #006699;
+}
+
+.mui-title {
+    color: #fff;
+}
+
+.mui-icon-search:before {
+    color: #fff;
+}
+
+.mui-bar {
+    background-color: #006699;
+}
+
+.mui-bar-tab .mui-tab-item {
+    color: #fff;
+}
+
+.mui-bar-tab .mui-tab-item.mui-active {
+    color: darkorange;
+}
+
+.mui-grid-view.mui-grid-9 {
+    padding: 10px;
+    background-color: #fff;
+}
+
+img {
+    width: 100%;
+    vertical-align: top;
+
+}
+
+.mui-grid-view.mui-grid-9 .mui-table-view-cell {
+    margin: 0;
+    padding: 0;
+    border: none;
+
+}
+
+.mui-grid-view.mui-grid-9 .mui-table-view-cell>a:not(.mui-btn) {
+    padding: 0;
+}
+
+.brand {
+    padding: 10px;
+}
+
+.brand ul li {
+    float: left;
+    width: 25%;
+}
+
+.product {
+    padding: 10px;
+}
+
+.product ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product ul li {
+    // dispaly:block;
+    width: 49%;
+    boder:1px solid #ccc;
+    box-shadow: 1px 1px 10px #ccc;
+    margin-top:10px;
+    padding:6px;
+
+}
+.product ul li .name{
+    display: block;
+    font-size: 14px;
+    color:#8f8f94;
+    line-height: 18px;
+    text-align: center;
+    height: 38px;
+    overflow: hidden;
+}
+.product p{
+    text-align:center;
+}
+.product .button{
+    display: flex;
+    justify-content:center;
+}

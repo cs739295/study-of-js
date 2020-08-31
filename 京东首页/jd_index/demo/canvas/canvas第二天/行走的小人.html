@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>行走的小人</title>
+    <style>
+        canvas {
+            display: block;
+            margin: 100px auto;
+            border:1px dashed #ccc;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="600" height="400">
+    </canvas>
+    <script>
+    function Person() {
+        this.ctx =  document.querySelector('canvas').getContext('2d');
+        this.src = '../image/03.png';
+        //画布的大小
+        this.canvasWidth = this.ctx.canvas.width;
+        this.canvasHeight = this.ctx.canvas.height;
+        //步伐大小
+        this.stepSize = 10;
+        //行走的方向 向前0，左1右2后3
+        this.direction = 0;
+        this.stepY = 0;
+        this.stepX = 0;
+        // this.index = 0;
+        this.init();
+
+    }
+    Person.prototype.init = function(){
+        // 加载图片
+        // 通过方向键控制
+        var that = this;
+        this.loadImage(function(image){
+            // 默认绘制在中心位置正面朝外
+            that.imageWidth = image.width;
+            that.imageHeight = image.height;
+            that.personWidth = image.width / 4;
+            that.personHeight = image.height / 4;
+            that.x0 = that.canvasWidth/2 - that.personWidth;
+            that.y0 = that.canvasHeight/2 - that.personHeight;
+            that.ctx.drawImage(image,0,0,that.personWidth,that.personHeight,that.x0,that.y0,that.personWidth,that.personHeight);
+            //方向键控制行走
+            that.index = 0;
+            document.onkeydown = function(e){
+                if(e.keyCode == 40) {
+                    that.index++;
+                    that.stepY++;
+                    that.direction = 0;
+                    that.drawImages(image);
+                    //下
+                }
+                if(e.keyCode == 37) {
+                    that.stepX--;
+                    that.index++;
+                    that.direction = 1;
+                    that.drawImages(image);
+                    //左
+
+                }
+                if(e.keyCode == 39) {
+                    // console.log(e.keyCode);
+                    that.stepX++;
+                    that.index++;
+                    that.direction = 2;
+                    that.drawImages(image);
+                    //右
+                }
+                if(e.keyCode == 38) {
+                    that.stepY--;
+                    that.index++;
+                    that.direction = 3;
+                    that.drawImages(image);
+                    //上
+                }
+            }
+        });
+
+    }
+    Person.prototype.loadImage = function(callback){
+        var image = new Image();
+        image.onload = function(){
+            callback && callback(image);
+        };
+        image.src = this.src;
+    }
+    Person.prototype.drawImages = function(image){
+        this.ctx.clearRect(0,0,this.canvasWidth,this.canvasHeight);
+        this.ctx.drawImage(image,this.index*this.personWidth,this.direction*this.personHeight,
+            this.personWidth,this.personHeight,this.x0+this.stepX*10,this.y0+this.stepY*10,this.personWidth,this.personHeight);
+        if(this.index >= 3) {
+            this.index = 0;
+        }
+    }
+    new Person();
+    </script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+@baseColor:#e92322;
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    border:0;
+}
+/*微金所头部*/
+.wjs_top{
+    height:42px;
+    border-bottom: 1px solid #ccc;
+    line-height:42px;
+    .row{
+        height: 100%;
+        >div{
+            text-align:center;
+        }
+        >div:nth-of-type(-n+3){
+            font-size:10px;
+            border-right:1px solid #ccc;
+        }
+        >div:first-of-type{
+            }
+            a,a:hover{
+                position:relative;
+                display: inline-block;
+                text-decoration: none;
+                color:#333;
+                font-size:12px;
+                >img{
+                    display: none;
+                    position: absolute;
+                    left:0;
+                    top:39px;
+                    z-index: 999;
+                }
+                &:hover{
+                    >img{
+                        display: block;
+                    }
+                }
+            }
+        }
+        >div:last-of-type{
+            .btn{
+                font-size:12px;
+                padding: 4px 4px;
+                margin-right: 6px;
+            }
+        }
+    }
+/*微金所导航条*/
+.wjs_nav{
+    background-color: #fff;
+    border:none;
+    >.container{
+        >div:last-of-type{
+            a{
+                display: block;
+                padding: 20px;
+                font-size:14px;
+                &:hover{
+                    &a:first-of-type{
+                        border-bottom:none;
+                    }
+                    border-bottom: 3px solid @baseColor;
+                }
+            }
+            .active{
+                a{
+                    background-color: #fff;
+                    border-bottom:3px solid     @baseColor;
+                }
+
+
+            }
+        }
+    }
+}
+/*微金所轮播图*/
+.wjs_banner{
+    .mobileImg{
+        width:100%;
+        display: block;
+    }
+    .pcImg{
+        height:410px;
+        display: block;
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-position: center center;
+    }
+}
+/*产品信息块*/
+.wjs_info{
+    border-bottom:1px solid #ccc;
+    .row{
+        >div{
+            &:hover{
+                color:@baseColor;
+            }
+            text-align:left;
+            margin-top: 30px;
+            font-size:26px;
+            >p{
+                font-size:14px;
+            }
+        }
+    }
+}
+/*微金所预约*/
+.wjs_reserve{
+    /*border-top:1px solid #ccc;*/
+    height: 50px;
+    line-height:50px;
+    text-align:center
+    >span{
+        float:left;
+    }
+    >span:first-of-type{
+        margin-right: 8px;
+        >i{
+            color:@baseColor;
+        }
+    }
+    >span:nth-of-type(2){
+        color:@baseColor;
+        border-bottom:1px dashed @baseColor;
+    }
+    >span:last-of-type{
+        float:right;
+    }
+}
+/*微金所产品块*/
+.wjs_product{
+    width:100%;
+    background-color: #eee;
+    .tabs_parent{
+        width:100%;
+        overflow: hidden;
+    }
+    .nav{
+        height:100%;
+        border-bottom:none;
+        position: relative;
+        .active{
+            border:none;
+            border-bottom:1px solid @baseColor;
+            >a,a:hover,a:focus{
+                background-color: #eee;
+                border:none;
+            }
+        }
+        li{
+            a,a:hover,a:focus{
+                background-color: #eee;
+                border:none;
+                color:#333;
+            }
+        }
+        li:last-of-type{
+            position:absolute;
+            right:0;
+            top:0
+        }
+    }
+    .wjs-active{
+        background-color: @baseColor!important;
+        color:#fff;
+    >.right{
+        >div{
+            color:#fff;
+        }
+    }
+}
+    .wjs_pBox{
+        height: 150px;
+        background-color: #fff;
+        margin-top:20px;
+        margin-bottom:5px;
+        position:relative;
+
+            >.left{
+        padding: 0px 8px;
+        padding-top:10px;
+        margin-right:100px;
+        height: 150px;
+        font-size:12px;
+        >h4{
+            text-align: center;
+        }
+        >.row{
+            >div{
+                >p{
+                    margin: 0 0 5px;
+                }
+            }
+            >div:nth-of-type(-n+2){
+                margin-bottom:10px;
+            }
+            >div:nth-of-type(even){
+                text-align: right;
+                >p{
+                    padding-right:12px;
+                }
+            }
+        }
+            }
+            >.right{
+                box-sizing: border-box;
+                width:100px;
+                height: 150px;
+                position: absolute;
+                right: 15px;
+                top: 0px;
+                padding-top:30px;
+                border-left: 1px dashed #ccc;
+                text-align: center;
+                &::before{
+                    content:"";
+                    display: block;
+                    box-sizing:border-box;
+                    position:absolute;
+                    width: 10px;
+                    height: 10px;
+                    border:1px solid #eee;
+                    border-radius: 5px;
+                    background-color: #eee;
+                    left: -5px;
+                    top: -5px;
+                    }
+        &::after{
+            content:"";
+            display: block;
+            box-sizing:border-box;
+            position:absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: #eee;
+            left: -5px;
+            bottom: -5px;
+        }
+        >div{
+            color:@baseColor;
+            >span{
+                font-size:36px;
+            }
+            >sub{
+                bottom:0;
+            }
+        }
+            }
+    }
+}
+/*微金所新闻块*/
+.wjs_news{
+    border-bottom:1px solid #ccc;
+    .wjs_newsTitle{
+        margin-top:40px;
+        border-bottom:1px dashed #ccc;
+        padding-bottom: 8px;
+        text-align: center;
+        position: relative;
+        &::before{
+            content:"";
+            position:absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border:1px solid #ccc;
+            border-radius:5px;
+            right: -5px;
+            bottom:-5px;
+
+        }
+    }
+    .wjs_newsTip{
+        margin-top: 40px;
+        border-bottom:none;
+        >li{
+            width: 60px;
+            height: 60px;
+            background-color: #ccc;
+            box-sizing:border-box;
+            border:1px solid #ccc;
+            border-radius:30px;
+            font-size: 12px;
+            text-align:center;
+            margin-bottom:25px;
+            >a{
+                width: 100%;
+                height: 100%;
+                border-radius:50%;
+                background-color: #ccc;
+                border:none;
+
+            }
+        }
+        >.active{
+            >a,a:hover,a:focus{
+                border:none;
+                color:#fff;
+                background-color: @baseColor;
+            }
+            background-color: @baseColor;
+        }
+    }
+    .wjs_newsContent{
+        >div{
+            >ul{
+                list-style:none;
+                margin-top:40px;
+                >li{
+                margin-bottom:20px;
+            }
+        }
+        }
+
+    }
+}
+/*合作伙伴部分*/
+.wjs_partner{
+    h3{
+        text-align: center;
+    }
+    .text-center{
+        position: relative;
+        .partner-list{
+        position: absolute;
+        width: 750px;
+        left:50%;
+        top:10px;
+        transform:translateX(-50%);
+        list-style-type: none;
+        text-align: center;
+        >li{
+            float:left;
+            display: inline;
+            font-size:60px;
+            margin-right:20px;
+        }
+    }
+    }
+}

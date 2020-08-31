@@ -1,0 +1,317 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+img {
+  border: 0;
+}
+/*微金所头部*/
+.wjs_top {
+  height: 42px;
+  border-bottom: 1px solid #ccc;
+  line-height: 42px;
+}
+.wjs_top .row {
+  height: 100%;
+}
+.wjs_top .row > div {
+  text-align: center;
+}
+.wjs_top .row > div:nth-of-type(-n+3) {
+  font-size: 10px;
+  border-right: 1px solid #ccc;
+}
+.wjs_top .row a,
+.wjs_top .row a:hover {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-size: 12px;
+}
+.wjs_top .row a > img,
+.wjs_top .row a:hover > img {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 39px;
+  z-index: 999;
+}
+.wjs_top .row a:hover > img,
+.wjs_top .row a:hover:hover > img {
+  display: block;
+}
+.wjs_top > div:last-of-type .btn {
+  font-size: 12px;
+  padding: 4px 4px;
+  margin-right: 6px;
+}
+/*微金所导航条*/
+.wjs_nav {
+  background-color: #fff;
+  border: none;
+}
+.wjs_nav > .container > div:last-of-type a {
+  display: block;
+  padding: 20px;
+  font-size: 14px;
+}
+.wjs_nav > .container > div:last-of-type a:hover {
+  border-bottom: 3px solid #e92322;
+}
+.wjs_nav > .container > div:last-of-type a:hovera:first-of-type {
+  border-bottom: none;
+}
+.wjs_nav > .container > div:last-of-type .active a {
+  background-color: #fff;
+  border-bottom: 3px solid #e92322;
+}
+/*微金所轮播图*/
+.wjs_banner .mobileImg {
+  width: 100%;
+  display: block;
+}
+.wjs_banner .pcImg {
+  height: 410px;
+  display: block;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+}
+/*产品信息块*/
+.wjs_info {
+  border-bottom: 1px solid #ccc;
+}
+.wjs_info .row > div {
+  text-align: left;
+  margin-top: 30px;
+  font-size: 26px;
+}
+.wjs_info .row > div:hover {
+  color: #e92322;
+}
+.wjs_info .row > div > p {
+  font-size: 14px;
+}
+/*微金所预约*/
+.wjs_reserve {
+  /*border-top:1px solid #ccc;*/
+  height: 50px;
+  line-height: 50px;
+}
+.wjs_reserve text-align:center > span {
+  float: left;
+}
+.wjs_reserve > span:first-of-type {
+  margin-right: 8px;
+}
+.wjs_reserve > span:first-of-type > i {
+  color: #e92322;
+}
+.wjs_reserve > span:nth-of-type(2) {
+  color: #e92322;
+  border-bottom: 1px dashed #e92322;
+}
+.wjs_reserve > span:last-of-type {
+  float: right;
+}
+/*微金所产品块*/
+.wjs_product {
+  width: 100%;
+  background-color: #eee;
+}
+.wjs_product .tabs_parent {
+  width: 100%;
+  overflow: hidden;
+}
+.wjs_product .nav {
+  height: 100%;
+  border-bottom: none;
+  position: relative;
+}
+.wjs_product .nav .active {
+  border: none;
+  border-bottom: 1px solid #e92322;
+}
+.wjs_product .nav .active > a,
+.wjs_product .nav .active a:hover,
+.wjs_product .nav .active a:focus {
+  background-color: #eee;
+  border: none;
+}
+.wjs_product .nav li a,
+.wjs_product .nav li a:hover,
+.wjs_product .nav li a:focus {
+  background-color: #eee;
+  border: none;
+  color: #333;
+}
+.wjs_product .nav li:last-of-type {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.wjs_product .wjs-active {
+  background-color: #e92322 !important;
+  color: #fff;
+}
+.wjs_product .wjs-active > .right > div {
+  color: #fff;
+}
+.wjs_product .wjs_pBox {
+  height: 150px;
+  background-color: #fff;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  position: relative;
+}
+.wjs_product .wjs_pBox > .left {
+  padding: 0px 8px;
+  padding-top: 10px;
+  margin-right: 100px;
+  height: 150px;
+  font-size: 12px;
+}
+.wjs_product .wjs_pBox > .left > h4 {
+  text-align: center;
+}
+.wjs_product .wjs_pBox > .left > .row > div > p {
+  margin: 0 0 5px;
+}
+.wjs_product .wjs_pBox > .left > .row > div:nth-of-type(-n+2) {
+  margin-bottom: 10px;
+}
+.wjs_product .wjs_pBox > .left > .row > div:nth-of-type(even) {
+  text-align: right;
+}
+.wjs_product .wjs_pBox > .left > .row > div:nth-of-type(even) > p {
+  padding-right: 12px;
+}
+.wjs_product .wjs_pBox > .right {
+  box-sizing: border-box;
+  width: 100px;
+  height: 150px;
+  position: absolute;
+  right: 15px;
+  top: 0px;
+  padding-top: 30px;
+  border-left: 1px dashed #ccc;
+  text-align: center;
+}
+.wjs_product .wjs_pBox > .right::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background-color: #eee;
+  left: -5px;
+  top: -5px;
+}
+.wjs_product .wjs_pBox > .right::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #eee;
+  left: -5px;
+  bottom: -5px;
+}
+.wjs_product .wjs_pBox > .right > div {
+  color: #e92322;
+}
+.wjs_product .wjs_pBox > .right > div > span {
+  font-size: 36px;
+}
+.wjs_product .wjs_pBox > .right > div > sub {
+  bottom: 0;
+}
+/*微金所新闻块*/
+.wjs_news {
+  border-bottom: 1px solid #ccc;
+}
+.wjs_news .wjs_newsTitle {
+  margin-top: 40px;
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 8px;
+  text-align: center;
+  position: relative;
+}
+.wjs_news .wjs_newsTitle::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  right: -5px;
+  bottom: -5px;
+}
+.wjs_news .wjs_newsTip {
+  margin-top: 40px;
+  border-bottom: none;
+}
+.wjs_news .wjs_newsTip > li {
+  width: 60px;
+  height: 60px;
+  background-color: #ccc;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.wjs_news .wjs_newsTip > li > a {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #ccc;
+  border: none;
+}
+.wjs_news .wjs_newsTip > .active {
+  background-color: #e92322;
+}
+.wjs_news .wjs_newsTip > .active > a,
+.wjs_news .wjs_newsTip > .active a:hover,
+.wjs_news .wjs_newsTip > .active a:focus {
+  border: none;
+  color: #fff;
+  background-color: #e92322;
+}
+.wjs_news .wjs_newsContent > div > ul {
+  list-style: none;
+  margin-top: 40px;
+}
+.wjs_news .wjs_newsContent > div > ul > li {
+  margin-bottom: 20px;
+}
+/*合作伙伴部分*/
+.wjs_partner h3 {
+  text-align: center;
+}
+.wjs_partner .text-center {
+  position: relative;
+}
+.wjs_partner .text-center .partner-list {
+  position: absolute;
+  width: 750px;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+  list-style-type: none;
+  text-align: center;
+}
+.wjs_partner .text-center .partner-list > li {
+  float: left;
+  display: inline;
+  font-size: 60px;
+  margin-right: 20px;
+}

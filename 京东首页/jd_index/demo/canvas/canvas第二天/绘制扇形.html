@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<style>
+    canvas{
+        border: 1px solid #ccc;
+        margin: 20px 500px;
+    }
+</style>
+<body>
+    <canvas width="800" height="600"></canvas>
+</body>
+<script>
+    var myCanvas=document.querySelector("canvas");
+    var ctx=myCanvas.getContext("2d");
+    var w=ctx.canvas.width/2;
+    var h=ctx.canvas.height/2;
+    ctx.moveTo(w, h);
+    ctx.arc(w,h,150,0,Math.PI/6);
+    ctx.closePath();
+    ctx.fill();
+
+</script>
+</html>

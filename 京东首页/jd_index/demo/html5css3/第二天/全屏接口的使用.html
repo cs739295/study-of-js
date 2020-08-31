@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<style >
+    div{
+        width:200px;
+        height: 200px;
+        margin:20px auto;
+    }
+</style>
+<body>
+    <div id="div1">
+        <img src="../../../image/1.jpg" width="200" height="200"  alt="" />
+        <input type="button" name="fullScreen" id="fullScreen" value="全屏">
+        <input type="button" name="cancelScreen" id="cancelScreen" value="退出全屏">
+        <input type="button" name="isFullScreen" id="isFullScreen" value="是否是全屏">
+    </div>
+</body>
+<script>
+    document.querySelector("#fullScreen").onclick=function(){
+        var div=document.querySelector("#div1");
+        // 能力测试,进入全屏模式
+        if(div.requestFullScreen){
+            div.requestFullScreen();
+        }else if(div.webkitRequestFullScreen){
+            div.webkitRequestFullScreen();
+        }else if(div.mozRequestFullScreen){
+            div.mozRequestFullScreen;
+        }else{
+            div.msRequestFullScreen();
+        }
+    };
+        //能力测试，退出全屏模式
+        document.querySelector("#cancelScreen").onclick=function(){
+        var div=document.querySelector("#div1");
+        if(document.cancelFullScreen){
+             document.cancelFullScreen();
+        }else if(document.webkitCancelFullScreen){
+           document.webkitCancelFullScreen();
+        }else if(document.mozCancelFullScreen){
+           document.mozCancelFullScreen();
+        }else{
+          document.msCanceltFullScreen();
+        }
+        };
+        //判断元素是处于全屏状态
+        document.querySelector("#isFullScreen").onclick=function(){
+            if(document.isFullScreen||document.webkitIsFullScreen||document.mozIsFullScreen||document.msIsFullScreen||false){
+                alert("处于全屏状态");
+            }
+        };
+
+</script>
+</html>

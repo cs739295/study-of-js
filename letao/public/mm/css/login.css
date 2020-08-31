@@ -1,0 +1,23 @@
+.mui-btn-blue, .mui-btn-primary, input[type=submit]{
+    width:80%;
+}
+.login-container input{
+    font-size:15px;
+}
+.login-container label{
+    font-size: 15px;
+}
+.login-container .register a{
+    font-size: 14px;
+    color: #006699;
+    float:right;
+    margin-right:5px;
+    margin-top:5px;
+}
+.mui-input-group::after{
+    background-color: transparent;
+}
+.mui-button-row{
+    margin-top:15px;
+}
+

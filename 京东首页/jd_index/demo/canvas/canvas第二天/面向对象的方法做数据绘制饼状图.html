@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<style>
+    canvas{
+        border: 1px solid #ccc;
+        margin: 20px 500px;
+    }
+</style>
+<body>
+    <canvas width="800" height="600"></canvas>
+</body>
+<script>
+    var color;
+    var data=[
+    {
+        number:5,
+        name: "30岁以上"
+    },
+    {
+        number:30,
+        name: "25-30岁"
+    },
+    {
+        number:10,
+        name: "20-25岁"
+    },
+    {
+        number:5,
+        name: "20岁下"
+    }
+    ];
+    // 产生任意颜色的函数
+    function getRandomColor(){
+        var r=Math.floor(Math.random()*255);
+        var g=Math.floor(Math.random()*255);
+        var b=Math.floor(Math.random()*255);
+        return "rgb("+r+","+g+","+b+")";
+    }
+    // 饼状图的对象
+    function PiChart(ctx,data){
+        this.ctx=document.querySelector("canvas").getContext("2d")||ctx;
+        // canvas画布的宽高
+        this.canvasHeight=this.ctx.canvas.height;
+        this.canvasWidth=this.ctx.canvas.width;
+        // 饼状图的中心坐标及半径
+        this.x0=this.canvasWidth/2+20;
+        this.y0=this.canvasHeight/2;
+        this.radius=150;
+        //介绍的矩形图的大小
+        this.rectWidth=40;
+        this.rectHeight=20;
+        // 矩形距离左右两边的间距
+        this.space=10;
+        // 线伸出去的长度
+        this.outline=5;
+    }
+    // 饼状图的初始化
+    PiChart.prototype.init=function(data,color){
+        this.drawPiChart(data);
+    };
+    // 画饼状图
+    PiChart.prototype.drawPiChart=function(data,color){
+        // 1.数据的转换
+        // 2.画图
+        this.transform(data);
+        var that=this;
+        var startAngle=0;
+        data.forEach(function(item,i){
+            // 绘制饼图
+            that.ctx.beginPath();
+            var endAngle=startAngle+item.angle;
+            that.ctx.moveTo(that.x0, that.y0);
+            that.ctx.arc(that.x0, that.y0, that.radius,  startAngle,endAngle);
+            color=getRandomColor();
+            that.ctx.fillStyle=color;
+            that.ctx.fill();
+            // 绘制线
+            that.ctx.beginPath();
+            that.drawLine(startAngle,item,color);
+            startAngle=endAngle;
+            // 绘制说明
+            that.ctx.beginPath();
+            that.drawIndroduce(item,i,data,color);
+            });
+    };
+    // 数据的转换
+    PiChart.prototype.transform=function(data){
+        var total=0;
+        data.forEach(function(item,i){
+            total+=item.number;
+        });
+        data.forEach(function(item,i){
+            var angle=item.number/total*Math.PI*2;
+            item.angle=angle;
+        });
+    }
+    //数据介绍的绘制
+    PiChart.prototype.drawIndroduce=function(item,i,data,color){
+        // 画矩形
+         this.ctx.beginPath();
+         this.ctx.moveTo(this.space, (i+1)*this.space+i*this.rectHeight);
+         this.ctx.rect(this.space, (i+1)*this.space+i*this.rectHeight, this.rectWidth, this.rectHeight);
+         this.ctx.fillStyle=color;
+         this.ctx.fill();
+         // 写文字
+         this.ctx.beginPath();
+         this.ctx.textAlign="top";
+         this.ctx.font="14px Microsoft YaHei";
+         this.ctx.textAlign="left";
+         this.ctx.fillText(item.name,this.space+this.rectWidth, (i+1)*this.space+(i+1)*this.rectHeight);
+    };
+    //饼状图上线的绘制
+    PiChart.prototype.drawLine=function(startAngle,item,color){
+        // 计算斜边终点的坐标
+        var edge=this.radius+this.outline;
+        var edgeX=edge*Math.cos(item.angle/2+startAngle);
+        var edgeY=edge*Math.sin(item.angle/2+startAngle);
+        var outX=edgeX+this.x0;
+        var outY=edgeY+this.y0;
+        // 画扇形中心线和横线加写说明
+        // 计算文字的长度
+        var textWidth=this.ctx.measureText(item.name).width;
+        this.ctx.beginPath();
+        this.ctx.moveTo(this.x0, this.y0);
+        this.ctx.lineTo(outX,outY);
+        if(outX>this.x0){
+            this.ctx.textAlign="left";
+            this.ctx.lineTo(outX+textWidth, outY);
+        }else if(outX<this.x0){
+            this.ctx.textAlign="right";
+            this.ctx.lineTo(outX-textWidth, outY);
+        }
+        this.ctx.font="14px Microsoft YaHei";
+        this.ctx.fillText(item.name,outX,outY);
+        this.ctx.strokeStyle=color;
+        this.ctx.stroke();
+    }
+
+
+    var piChart= new PiChart();
+    piChart.init(data,color);
+
+
+</script>
+</html>

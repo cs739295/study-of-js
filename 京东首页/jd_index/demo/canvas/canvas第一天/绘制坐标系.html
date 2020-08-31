@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<style>
+    canvas{
+        margin: 20px  500px;
+        border: 1px solid #ccc;
+
+    }
+</style>
+<body>
+    <canvas width="600" height="400">    </canvas>
+</body>
+<script>
+   var myCanvas=document.querySelector("canvas");
+   var ctx=myCanvas.getContext("2d");
+   // 1 坐标系距离两边的间距
+   // 2 x轴坐标系
+   // 3 y轴坐标系
+   // 4 箭头的大小
+   var space=20;
+   var arrowSize=10;
+   var canvasHeight=ctx.canvas.height;
+   var canvasWidth=ctx.canvas.width;
+   //原点的坐标
+   var x0=space;
+   var y0=canvasHeight-space;
+   // 2 x轴坐标系
+   ctx.moveTo(x0, y0);
+   ctx.lineTo(canvasWidth-space, y0-0.5);
+   ctx.lineTo(canvasWidth-space-arrowSize, y0+arrowSize/2-0.5);
+   ctx.lineTo(canvasWidth-space-arrowSize, y0-arrowSize/2-0.5);
+   ctx.lineTo(canvasWidth-space, y0-0.5);
+   ctx.strokeStyle="#000";
+   ctx.stroke();
+   ctx.fill();
+   // 2 y轴坐标系
+   ctx.beginPath();
+   ctx.moveTo(x0, y0);
+   ctx.lineTo(x0, space-0.5);
+   ctx.lineTo(x0-arrowSize/2, space+arrowSize-0.5);
+   ctx.lineTo(x0+arrowSize/2, space+arrowSize-0.5);
+   ctx.lineTo(x0, space-0.5);
+   ctx.strokeStyle="#000";
+   ctx.stroke();
+   ctx.fill();
+
+
+
+</script>
+</html>

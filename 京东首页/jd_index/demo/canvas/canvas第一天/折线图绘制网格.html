@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<style>
+    canvas{
+        margin: 20px  500px;
+        border: 1px solid #ccc;
+
+    }
+</style>
+<body>
+    <canvas width="600" height="400">    </canvas>
+</body>
+<script>
+   // 1.x轴方向上总条数
+   // 2.y轴方向上总条数
+   // 3.网格的大小
+   var myCanvas=document.querySelector("canvas");
+   var ctx=myCanvas.getContext("2d");
+   var canvasHeight=ctx.canvas.height;
+   var canvasWidth=ctx.canvas.width;
+   var gridSize=10;
+   // 1.x轴方向上总条数
+   var xLineTatol=canvasHeight / gridSize;
+   for(var i=0;i<xLineTatol;i++){
+        ctx.beginPath();
+        ctx.moveTo(0, i*gridSize-0.5);
+        ctx.lineTo(canvasWidth, i*gridSize-0.5);
+        ctx.strokeStyle="#eee";
+        ctx.stroke();
+   }
+   // 2.y轴方向上总条数
+   var yLineTatol=canvasWidth / gridSize;
+    for(var i=0;i<yLineTatol;i++){
+        ctx.beginPath();
+        ctx.moveTo(i*gridSize-0.5, 0);
+        ctx.lineTo(i*gridSize-0.5, canvasHeight);
+        ctx.strokeStyle="#eee";
+        ctx.stroke();
+}
+
+
+
+
+</script>
+</html>

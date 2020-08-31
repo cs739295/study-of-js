@@ -1,0 +1,71 @@
+/*
+* @Author: Administrator
+* @Date:   2017-11-10 20:34:40
+* @Last Modified by:   name
+* @Last Modified time: 2019-06-27 16:59:18
+*/
+
+/*
+Bootstrap  ÃƒÆ’Ã‚Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°Ãƒâ€šÃ‚Â©ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â±ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢
+ */
+body{
+   font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
+@font-face{
+  font-family:'tencentit';
+  src : url('../font/MiFie-Web-Font.eot') format('embedded-opentype'),
+      url('../font/MiFie-Web-Font.svg') format('svg'),
+      url('../font/MiFie-Web-Font.ttf') format('truetype'),
+      url('../font/MiFie-Web-Font.woff') format('woff');
+}
+[class^="icon-"],[class*=" icon-"]{
+  font-family: tencentit;
+  font-style: normal;
+}
+
+.icon-mobilephone::before {
+  content: "\e908";
+  font-size: 13px;
+}
+
+.icon-telephone::before {
+  content: "\e909";
+  font-size: 15px;
+}
+.icon-icon::before {
+  content: "\e920";
+}
+.icon-logo::before {
+  content: "\e93e";
+}
+.icon-uniE907:before {
+  content: "\e907";
+}
+.icon-uniE930:before {
+  content: "\e946";
+}
+
+.icon-uniE92F:before {
+  content: "\e92f";
+}
+.icon-uniE92E:before {
+  content: "\e92e";
+}
+.icon-uniE92A:before {
+  content: "\e92a";
+}
+.icon-uniE929:before {
+  content: "\e929";
+}
+.icon-uniE931:before {
+  content: "\e931";
+}
+.icon-uniE92C:before {
+  content: "\e92c";
+}
+.icon-uniE92B:before {
+  content: "\e92b";
+}
+.icon-uniE92D:before {
+  content: "\e92d";
+}

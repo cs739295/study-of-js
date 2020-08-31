@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<style>
+    canvas{
+        margin: 20px  500px;
+        border: 1px solid #ccc;
+
+    }
+</style>
+<body>
+    <canvas width="600" height="400">    </canvas>
+</body>
+<script>
+   var myCanvas=document.querySelector("canvas");
+   var ctx=myCanvas.getContext("2d");
+   var data=[
+    {
+      x:146,
+      y:150
+    }
+   ];
+   // 1 点的大小
+   var dottedSize=6;
+   ctx.moveTo(data[0].x-dottedSize/2, data[0].y-dottedSize/2);
+   ctx.lineTo(data[0].x+dottedSize/2, data[0].y-dottedSize/2);
+   ctx.lineTo(data[0].x+dottedSize/2, data[0].y+dottedSize/2);
+   ctx.lineTo(data[0].x-dottedSize/2, data[0].y+dottedSize/2);
+   ctx.closePath();
+   ctx.stroke();
+   ctx.fillStyle="#000";
+   ctx.fill();
+   var data=[
+    {
+      x:146,
+      y:150
+    }
+   ];
+</script>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<style>
+    .red{
+        color:red;
+    }
+    .green{
+        color:green;
+    }
+    .blue{
+        color:blue;
+    }
+</style>
+<body>
+    <!-- <form action="" method="get" accept-charset="utf-8" id="myForm">
+        <fieldset>
+            <legend>表单标签</legend>
+            <label for="userinformation">用户名：</label>
+            <input type="text" name="userinformation" id="userinformation" autofocus autocomplete placeholder="请输入您的用户名">
+            <input type="tel" name="userTel" id="userTel" pattern="^1/d{10}$">
+            <input type="submit" name="submit">
+            <input type="text" name="college" id="college" list="baseketball" autofocus autocomplete >
+            <datalist id="baseketball">
+                <option value="篮球"></option>
+                <option value="足球"></option>
+                <option value="棒球"></option>
+            </datalist>
+            <audio  src="../audio/Unit3 section A Listening text 1.mp3" controls ></audio>
+        </fieldset>
+    </form>
+            <input type="email" name="useremail" id="useremail" multiple form="myForm" required> -->
+            <!-- <input type="button" name="" value="提交" id="userName">
+            <input type="button" name="" value="取消">
+ --><ul>
+     <li>前端与移动开发</li>
+     <li class="blue">java</li>
+     <li>javaScript</li>
+     <li>c++</li>
+     <input type="button" id="add" name="" value="为第一个li添加样式">
+     <input type="button" id="remove" name="" value="为第二个li移除样式">
+     <input type="button" id="toggle" name="" value="为第三个li切换样式">
+     <input type="button" id="iscontain" name="" value="是否包含样式">
+ </ul>
+</body>
+<script>
+            // var inputs=document.querySelectorAll("input");
+            // console.log(inputs);
+            // for(var i=0;i<inputs.length;i++){
+            //     inputs[i].onclick=function(){
+            //         this.value="600";
+            //     };
+            //}
+            window.onload=function(){
+                //add为制定的元素添加样式，是一个方法，与classList搭配，想classList返回的数组中添加样式
+                document.querySelector("#add").onclick=function(){
+                    //classList是一个属性，放回的是一个数组
+                    document.querySelectorAll("li")[0].classList.add("red");
+                };
+                //remove为制定的元素移除样式
+                document.querySelector("#remove").onclick=function(){
+                    document.querySelector(".blue").classList.remove("blue");
+                };
+                //toggle为指定的元素切换样式
+                document.querySelector("#toggle").onclick=function(){
+                    document.querySelectorAll("li")[2].classList.toggle("green");
+                };
+                //contain判断是否拥有某个样式
+                document.querySelector("#iscontain").onclick=function(){
+                    console.log(document.querySelectorAll("li")[3].classList.contains("red"));
+                };
+            };
+</script>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="../js/jquery-1.12.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<style>
+        padding:0;
+        margin:0;
+    }
+    .player{
+        height: 360px;
+        width: 720px;
+        margin:60px auto;
+        background: url("../image/1.jpg") no-repeat center;
+        background-size:cover;
+        position: relative;
+    }
+    video{
+        display:block;
+        width: 100%;
+        margin:0 auto;
+        /* display:none; */
+    }
+    .controls{
+        width: 100%;
+        height:40px;
+        position:absolute;
+        left:0px;
+        bottom:-40px;
+        background-color:#000;
+    }
+    a{
+       text-decoration:none;
+    }
+    .controls .switch{
+        color:#fff;
+       display:block;
+       width: 20px;
+       height: 20px;
+       font-size:16px;
+       position:absolute;
+       left:10px;
+       top:10px;
+    }
+    .controls .expand{
+        color:#fff;
+       display:block;
+       width: 20px;
+       height: 20px;
+       font-size:16px;
+       position:absolute;
+       right:10px;
+       top:10px;
+    }
+    .controls .progress{
+        width: 430px;
+        height:10px;
+        position:absolute;
+        left:40px;
+        bottom:15px;
+        background-color: #555;
+    }
+    .controls .progress .bar {
+        cursor: pointer;
+        width: 100%;
+        height:100%;
+        position:absolute;
+        left:0;
+        top:0;
+        border-radius:5px;
+        opacity:0;
+        z-index:999;
+        background-color: #555;
+    }
+    .controls .progress .loaded{
+        width: 0%;
+        height:100%;
+        position:absolute;
+        left:0;
+        top:0;
+        border-radius:5px;
+        background-color: #fff;
+    }
+    .controls .progress .elapse{
+        width: 80%;
+        height:100%;
+        position:absolute;
+        left:0;
+        top:0;
+        border-radius:5px;
+        background-color: #999;
+    }
+    .time{
+       height: 20px;
+       position:absolute;
+       left:490px;
+       top: 10px;
+       color:#fff;
+       font-size: 16px;
+    }
+</style>
+<body>
+    <div class="player">
+        <!-- 视频 -->
+        <video src="../video/mv.mp4" id="myVideo"></video>
+        <!-- 控制面板 -->
+        <div class="controls">
+             <!-- 播放暂停 -->
+             <a href="javascript:;" class="switch icon-play3"></a>
+             <a href="javascript:;" class="expand icon-pause2"></a>
+             <!-- 进度条 -->
+             <div class="progress">
+                <div class="loaded"></div>
+                <div class="bar"></div>
+                <div class="elapse"></div>
+             </div>
+             <!-- 时间 -->
+             <div class="time">
+                 <span class="currentTime">00:00:00</span>
+                 <span class="totalTime">00:00:00</span>
+             </div>
+        </div>
+    </div>
+</body>
+</html>

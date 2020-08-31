@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<style>
+    canvas{
+        border: 1px solid #ccc;
+        margin: 20px 500px;
+    }
+</style>
+<body>
+    <canvas width="600" height="400"></canvas>
+</body>
+<script>
+    var myCanvas=document.querySelector("canvas");
+    var ctx=myCanvas.getContext("2d");
+    var canvasHeight=ctx.canvas.height;
+    var canvasWidth=ctx.canvas.width;
+    var x0=canvasWidth/2;
+    var y0=canvasHeight/2;
+    var data=[5,30,10,5];
+    var angle;
+    var anglelist=[];
+    var total=0;
+    data.forEach(function(item,i){
+        total+=item;
+    });
+    data.forEach(function(item,i){
+         angle=item/total* Math.PI*2;
+         anglelist.push(angle);
+    });
+    // console.log(anglelist);
+    // 1.根据数据绘制饼图
+    // 2.饼图的中心坐标及半径
+    // 3.提供的数据转化为饼状图中的弧度
+    // 4.一个产生任意随机颜色的函数
+    function getRandomColor(){
+        var r=Math.floor(Math.random()*255);
+        var g=Math.floor(Math.random()*255);
+        var b=Math.floor(Math.random()*255);
+        return "rgb("+r+","+g+","+b+")";
+    }
+    var startAngle=0;
+    anglelist.forEach(function(item,i){
+        var endAngle=startAngle+item;
+        ctx.beginPath();
+        ctx.moveTo(x0, y0);
+        ctx.arc(x0, y0, 150, startAngle, endAngle);
+        startAngle=endAngle;
+        ctx.fillStyle=getRandomColor();
+        ctx.fill();
+    });
+</script>
+</html>

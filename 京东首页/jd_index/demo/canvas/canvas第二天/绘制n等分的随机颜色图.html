@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<style>
+    canvas{
+        border: 1px solid #ccc;
+        margin: 20px 500px;
+    }
+</style>
+<body>
+    <canvas width="800" height="600"></canvas>
+</body>
+<script>
+    var myCanvas=document.querySelector("canvas");
+    var ctx=myCanvas.getContext("2d");
+    var w0=ctx.canvas.width/2;
+    var h0=ctx.canvas.height/2;
+    var num=6;
+    // 每一份的angle
+    var angle=Math.PI*2/6;
+    //产生随机color
+    function getRandomColor(){
+        var r=Math.floor(Math.random()*255);
+        var g=Math.floor(Math.random()*255);
+        var b=Math.floor(Math.random()*255);
+        return "rgb("+r+","+g+","+b+")";
+    }
+    //绘制n等分的圆
+    for(var i=0;i<num;i++){
+        var startAngle=i*angle;
+        var endAngle=(i+1)*angle;
+        ctx.beginPath();
+        ctx.moveTo(w0, h0);
+        ctx.arc(w0,h0,150,startAngle,endAngle);
+        ctx.closePath();
+        ctx.fillStyle=getRandomColor();
+        ctx.fill();
+    }
+
+
+</script>
+</html>

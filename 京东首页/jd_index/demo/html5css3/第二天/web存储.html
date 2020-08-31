@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="name" value="你好"><br>
+    <input type="button" name="btn1" id="setItem" value="按钮1"> <br>
+    <input type="button" name="btn1" id="getItem" value="按钮2"> <br>
+    <input type="button" name="btn1" id="removeItem" value="按钮3"> <br>
+
+</body>
+<script>
+        var name=document.querySelector("#name").value;
+    //sessionStorageweb缓存
+    document.querySelector("#setItem").onclick=function(){
+        window.sessionStorage.setItem("useName",name);
+        console.log(window.sessionStorage.getItem("useName"));
+        //window.sessionStorage.removeItem("useName");
+
+    }
+    document.querySelector("#getItem").onclick=function(){
+         console.log(window.sessionStorage.getItem("useName"));
+        //window.sessionStorage.removeItem("useName");
+
+    }
+    document.querySelector("#removeItem").onclick=function(){
+        window.sessionStorage.removeItem("useName");
+
+    }
+
+
+</script>
+</html>
